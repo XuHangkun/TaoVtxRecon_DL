@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+h5py = "*"
+numpy = "*"
+matplotlib = "*"
+pandas = "*"
+torch = "*"
+torchvision = "*"
+torchaudio = "*"
+tensorboard = "*"
+tqdm = "*"
+
+[dev-packages]
+torch-tb-profiler = "*"
+
+[requires]
+python_version = "3.6"
