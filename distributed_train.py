@@ -27,8 +27,8 @@ def train(args):
     device = torch.device("cuda", args.local_rank)
 
     # make dataset
-    train_dataset = datasets[args.dataset_name](args.train_dataset_file, args.train_dataset_info_file)
-    valid_dataset = datasets[args.dataset_name](args.valid_dataset_file, args.valid_dataset_info_file)
+    train_dataset = datasets[args.dataset_name](args.train_dataset_file, args.train_dataset_info_file, information = args.dataset_information)
+    valid_dataset = datasets[args.dataset_name](args.valid_dataset_file, args.valid_dataset_info_file, information = args.dataset_information)
     train_size = len(train_dataset)
     valid_size = len(valid_dataset)
     train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)

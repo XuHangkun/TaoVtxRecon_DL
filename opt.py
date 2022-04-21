@@ -14,12 +14,14 @@ def config_parser():
     parser.add_argument("--base_dir",default = "../result", help = "Directory of log")
     # Dataset Parameters
     parser.add_argument("--dataset_name", default = "CNN", help = "Name of dataset", choices = ["CNN"])
+    parser.add_argument("--dataset_information", default = "all", 
+        help = "Information of dataset", choices = ["all", "charge", "time"])
 
     # Model Parameteers
     parser.add_argument("--model_name", default = "VGG", help = "Name of model", choices = ["VGG","ResNet"])
     parser.add_argument("--ckpt", default = None, help = "Path of pretrained model")
-    parser.add_argument("--in_channels", default = 2, help = "Num of input channels")
-    parser.add_argument("--out_channels", default = 3, help = "Num of output channels")
+    parser.add_argument("--in_channels", default = 2, type = int, help = "Num of input channels")
+    parser.add_argument("--out_channels", default = 3, type = int,  help = "Num of output channels")
 
     # Train parameter
     parser.add_argument("--local_rank", type = int)

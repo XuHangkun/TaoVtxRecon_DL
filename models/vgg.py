@@ -85,9 +85,9 @@ class VGG(nn.Module):
         return x * 900
 
 def test():
-    model = VGG(2,3)
+    model = VGG(1,3)
     import torch
-    img = torch.rand([256,2,128,64])
+    img = torch.rand([256,1,128,64])
     out = model(img)
     print(f"Input : {img.shape}\nOutput : {out.shape}")
 
